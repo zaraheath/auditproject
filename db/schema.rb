@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130922161817) do
+ActiveRecord::Schema.define(version: 20130922163111) do
 
   create_table "audits", force: true do |t|
     t.string   "name"
@@ -40,8 +40,10 @@ ActiveRecord::Schema.define(version: 20130922161817) do
     t.integer  "section_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ancestry"
   end
 
+  add_index "controls", ["ancestry"], name: "index_controls_on_ancestry", using: :btree
   add_index "controls", ["section_id"], name: "controls_section_id_fk", using: :btree
 
   create_table "sections", force: true do |t|
