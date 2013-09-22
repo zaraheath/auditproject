@@ -55,3 +55,5 @@ gem 'omniauth'
 #Styling gems
 gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
+gem 'foreigner'
+
