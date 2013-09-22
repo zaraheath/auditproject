@@ -1,0 +1,16 @@
+%h2= t("users.sign_in")
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  = t("users.email")
+  %br
+  = f.email_field :email, :autofocus => true
+  %br
+  = t("users.password")
+  %br
+  = f.password_field :password
+  %br
+  - if devise_mapping.rememberable?
+    = f.check_box :remember_me
+    = t("users.remember_me")
+  %br
+  = f.submit t("buttons.sign_in")
+= render "devise/shared/links"

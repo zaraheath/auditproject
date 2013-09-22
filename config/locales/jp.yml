@@ -1,0 +1,18 @@
+jp:
+  users:
+    sign_in: サインイン
+    sign_in_with: "%{provider}でサインイン"
+    sign_up: サインアップ
+    email: メール
+    password: パスワード
+    remember_me: アカウントを保存
+    new_password: パスワードをお忘れですか？
+    confirm_instructions: 確認メールがまだ届きませんか？
+    unlock_instructions: ロック解除命令を受信しませんでしたか？
+  buttons:
+    sign_in: サインイン
+  languages:
+    spanish: スペイン語
+    english_uk: 英語
+    japanese: 日本語
+  hello: こんにちは世界

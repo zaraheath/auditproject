@@ -53,4 +53,5 @@ gem 'omniauth'
 
 
 #Styling gems
-gem "twitter-bootstrap-rails"
+gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
+

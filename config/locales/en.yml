@@ -20,4 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  users:
+    sign_in: Sign in
+    sign_in_with: "Sign in with %{provider}"
+    sign_up: Sign up
+    email: Email
+    password: Password
+    remember_me: Remember me
+    new_password: Forgot your password?
+    confirm_instructions: Didn't receive confirmation instructions?
+    unlock_instructions: Didn't receive unlock instructions?
+  buttons:
+    sign_in: Sign in
+  languages:
+    spanish: Spanish
+    english_uk: English (UK)
+    japanese: Japanese
   hello: "Hello world"

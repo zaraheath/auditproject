@@ -1,2 +1,21 @@
 es:
-  hello: "Hola mundo"
+  users:
+    sign_in: Conectarse
+    sign_in_with: "Conectarse con %{provider}"
+    sign_up: Registrarse
+    email: Email
+    password: Contraseña
+    remember_me: Recordar contraseña
+    new_password: ¿Has olvidado tu contraseña?
+    confirm_instructions: ¿No has recibido confirmación?
+    unlock_instructions: ¿No has recibido instrucciones para desbloquear la cuenta?
+  buttons:
+      sign_in: Conectar
+  languages:
+    spanish: Español
+    english_uk: Inglés (Reino Unido)
+    japanese: Japonés
+  home: Inicio
+  home_content:
+    welcome_message: Bienvenidos a AudIT
+    welcome_description: Herramienta web para auditores

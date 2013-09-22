@@ -1,1 +1,4 @@
-= t("hello")
+= content_for :jumbotron do
+  %h1= t("home_content.welcome_message")
+  %p= t("home_content.welcome_description")
+= "yey"
