@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 20130922161817) do
   create_table "controls", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "grade_scale"
+    t.integer  "grade"
     t.text     "result"
     t.text     "recommendation"
     t.integer  "section_id"
