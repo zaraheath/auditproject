@@ -1,12 +1,12 @@
 class CreateAudits < ActiveRecord::Migration
   def up
     create_table :audits do |t|
-      t.string :name
+      t.string :name, :null => false
       t.string :client
       t.string :auditor_name
-      t.references :user
-      t.date :starting_date
-      t.date :ending_date
+      t.references :user, :null => false
+      t.date :start_date
+      t.date :end_date
       t.date :delivery_date
       t.text :objective
       t.text :global_opinion

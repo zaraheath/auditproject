@@ -1,9 +1,9 @@
 class CreateSections < ActiveRecord::Migration
   def up
     create_table :sections do |t|
-      t.string :name
+      t.string :name, :null => false
       t.text :description
-      t.references :audit
+      t.references :audit, :null => false
       t.timestamps
     end
 

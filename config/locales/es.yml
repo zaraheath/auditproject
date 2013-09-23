@@ -1,8 +1,15 @@
 es:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
   users:
     sign_in: Conectarse
     sign_in_with: "Conectarse con %{provider}"
     sign_up: Registrarse
+    logout: Salir
+    edit_account: Editar cuenta
     email: Email
     password: Contraseña
     remember_me: Recordar contraseña
@@ -11,6 +18,13 @@ es:
     unlock_instructions: ¿No has recibido instrucciones para desbloquear la cuenta?
   buttons:
       sign_in: Conectar
+      cancel: Cancelar
+      ok: OK
+      return: Volver
+      clear: Limpiar
+      edit: Editar
+      remove: Borrar
+      view_details: Ver detalles
   languages:
     spanish: Español
     english_uk: Inglés (Reino Unido)
@@ -19,3 +33,35 @@ es:
   home_content:
     welcome_message: Bienvenidos a AudIT
     welcome_description: Herramienta web para auditores
+  audits:
+    list: Lista de auditorías
+    audit: Auditoría
+    audits: Auditorías
+    new_audit_link: Crear nueva auditoría
+    new_audit_button: Crear auditoría
+    edit_audit_link: "Editar auditoría: %{title}"
+    edit_audit_button: Editar auditoría
+    title: Título
+    auditor_name: Nombre del auditor
+    start_date: Fecha de inicio
+    end_date: Fecha de fin
+    delivery_date: Fecha de entrega
+    period: Periodo de realización
+    from: del
+    to: al
+    objective: Objetivo
+    conclusion: Conclusión
+    global_opinion: Opinión General
+    global_recommendation: Recomendación general
+    signature: Firma
+    actions: Acciones
+    empty_results: Aún no hay auditorías para mostrar
+    description: En esta página podrás ver la lista de auditorías realizadas por orden alfabético según el cliente y editarlas, borrarlas o crear nuevas.
+    client: Cliente
+    remove_audit_alert: "¿Está seguro de querer eliminar esta auditoría? Se perderán todos los datos."
+  controls:
+    control: Control
+    high_level_control: Objetivo de control
+    detailed_control: Práctica de control
+    grades: Madurez
+

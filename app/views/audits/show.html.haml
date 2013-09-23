@@ -1,0 +1,27 @@
+= content_for :jumbotron do
+  %h2= @audit.name
+.thumbnail
+  %table{:width => "100%"}
+    %tr
+      %td{:width => "25%"}
+        %h4= t("audits.client")+':'
+        = @audit.client
+      %td{:width => "25%"}
+        %h4= t("audits.auditor_name")+':'
+        = @audit.auditor_name
+      %td{:width => "25%"}
+        %h4= t("audits.delivery_date")+':'
+        = @audit.delivery_date.blank? ? '-' : l(@audit.delivery_date)
+      %td{:width => "25%"}
+        %h4= t("audits.period")+':'
+        = t("audits.from").capitalize + ' ' + l(@audit.start_date) if !@audit.start_date.blank?
+        = t("audits.to") + ' ' + l(@audit.end_date) if !@audit.end_date.blank?
+.margin50px
+%h4= t("audits.objective")+':'
+= @audit.objective
+.margin50px
+%h4= t("audits.global_opinion")+':'
+= @audit.global_opinion
+.margin50px
+%h4= t("audits.global_recommendation")+':'
+= @audit.global_recommendation

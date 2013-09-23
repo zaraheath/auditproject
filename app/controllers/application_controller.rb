@@ -10,5 +10,9 @@ class ApplicationController < ActionController::Base
     Rails.application.routes.default_url_options[:locale]= I18n.locale
   end
 
+  def after_sign_in_path_for(resource)
+    audits_path
+  end
+
 
 end

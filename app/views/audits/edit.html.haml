@@ -1,0 +1,4 @@
+= content_for :jumbotron do
+  %h2= t("audits.edit_audit_link", title: @audit.name)
+.row
+  = render partial: 'form', locals: {url: audit_path(id: @audit.id)}

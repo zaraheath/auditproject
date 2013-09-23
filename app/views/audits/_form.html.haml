@@ -1,0 +1,40 @@
+= form_for @audit, url: url, html: {role: "form", class: "form-horizontal"} do |audit_form|
+  .form-group
+    = audit_form.label :name, t("audits.title")+':', class: "col-lg-2 control-label required"
+    .col-lg-10
+      .col-lg-12= audit_form.text_field :name, class: "form-control", required: true
+  .form-group
+    = audit_form.label :client, t("audits.client")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-5= audit_form.text_field :client, class: "form-control"
+      = audit_form.label :delivery_date, t("audits.delivery_date")+':', class: "col-lg-3 control-label"
+      .col-lg-4= audit_form.date_field :delivery_date, class: "form-control"
+  .form-group
+    = audit_form.label :auditor_name, t("audits.auditor_name")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_field :auditor_name, class: "form-control"
+  .form-group
+    = audit_form.label :start_date, t("audits.start_date")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-4= audit_form.date_field :start_date, class: "form-control"
+      = audit_form.label :end_date, t("audits.end_date")+':', class: "col-lg-4 control-label"
+      .col-lg-4= audit_form.date_field :end_date, class: "form-control"
+  .form-group
+    = audit_form.label :objective, t("audits.objective")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_area :objective, class: "form-control", rows: 3
+  .form-group
+    = audit_form.label :global_opinion, t("audits.global_opinion")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_area :global_opinion, class: "form-control", rows: 3
+  .form-group
+    = audit_form.label :global_recommendation, t("audits.global_recommendation")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_area :global_recommendation, class: "form-control", rows: 3
+  .form-group
+    .pull-right
+      = link_to t("buttons.cancel"), audits_path, class: "btn btn-danger"
+      - if action_name == "edit"
+        = audit_form.submit t("audits.edit_audit_button"), class: "btn btn-success"
+      - else
+        = audit_form.submit t("audits.new_audit_button"), class: "btn btn-success"

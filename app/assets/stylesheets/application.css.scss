@@ -37,3 +37,13 @@ ul.nav li {
   margin: 5px;
 }
 
+.required:after {
+  content: '*';
+}
+
+.glyphicon{
+  font-size: 16px;
+  margin: 3px;
+}
+
+

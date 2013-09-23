@@ -4,4 +4,7 @@ class Control < ActiveRecord::Base
 
   has_ancestry
 
+  validates :name, presence: true
+  validates :section, presence: true
+
 end

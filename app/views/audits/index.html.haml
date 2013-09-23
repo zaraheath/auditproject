@@ -1,0 +1,43 @@
+= content_for :jumbotron do
+  %h2= t("audits.list")
+  %p= t("audits.description")
+.row
+  .content
+    .row
+      .pull-right
+        = link_to t("audits.new_audit_link"), new_audit_path, class: "btn btn-success"
+        .margin50px
+    .row
+      %table.table
+        %colgroup
+          %col{:width => "30%"}
+          %col{:width => "15%"}
+          %col{:width => "15%"}
+          %col{:width => "15%"}
+          %col{:width => "15%"}
+          %col{:width => "10%"}
+        %thead
+          %th= t("audits.title")
+          %th= t("audits.client")
+          %th= t("audits.start_date")
+          %th= t("audits.end_date")
+          %th= t("audits.delivery_date")
+          %th= t("audits.actions")
+        %tbody
+          - if @audits.blank?
+            %tr
+              %td{:colspan => 6}
+                = t("audits.empty_results")
+          - else
+            - @audits.each_with_index do |audit, i|
+              %tr{:class => ((i % 2 == 0) ? "active" : "")}
+                %td= audit.name
+                %td= audit.client
+                %td= audit.start_date.blank? ? '-' : l(audit.start_date)
+                %td= audit.end_date.blank? ? '-' : l(audit.end_date)
+                %td= audit.delivery_date.blank? ? '-' : l(audit.delivery_date)
+                %td
+                  = link_to "", audit_path(id: audit.id), class: "glyphicon glyphicon-eye-open text-success", title: t("buttons.view_details")
+                  = link_to "", edit_audit_path(id: audit.id), class: "glyphicon glyphicon-edit text-warning", title: t("buttons.edit")
+                  = link_to "", audit_path(id: audit.id), method: 'delete', class: "glyphicon glyphicon-remove text-danger", title: t("buttons.remove"), confirm: t("audits.remove_audit_alert")
+                  = link_to "", nil, class: "glyphicon glyphicon-list-alt text-info"

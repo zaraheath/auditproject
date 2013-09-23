@@ -20,13 +20,9 @@
           = render 'devise/sessions/navbar_sign_in_form'
           = render 'layouts/languages'
     %main{:role => "main"}
-      .jumbotron
-        .container
-          = yield(:jumbotron)
       .container
-        .content
-          .row
-            .span12
-              = render 'layouts/messages'
-              = yield
+        .jumbotron
+          = yield(:jumbotron)
+        = render 'layouts/messages'
+        = yield
     %footer
