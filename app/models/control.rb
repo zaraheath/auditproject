@@ -13,6 +13,7 @@ class Control < ActiveRecord::Base
   has_ancestry
 
   validates :name, presence: true
+  validates :result, presence: true
   validates :section, presence: true
 
   def grade

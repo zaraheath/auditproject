@@ -40,6 +40,10 @@ class AuditsController < ApplicationController
     @audit = Audit.find params[:id]
   end
 
+  def destroy
+
+  end
+
   private
 
   def audit_params

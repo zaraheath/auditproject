@@ -1,0 +1,26 @@
+= content_for :header_info do
+  %h2= t("section.edit_section_link", title: @section.name)
+.row
+  = form_for @section, url: section_path(id: @section.id), html: {role: "form", class: "form-horizontal"} do |section_form|
+    - if @section.errors.any?
+      #error_explanation
+        %h2= pluralize(@section.errors.count, "error")
+        %ul
+          - @section.errors.full_messages.each do |msg|
+            %li= msg
+    .form-group
+      = section_form.label :name, t("section.name")+':', class: "col-lg-2 control-label required"
+      .col-lg-10
+        .col-lg-12= section_form.text_field :name, class: "form-control", required: true
+    .form-group
+      = section_form.label :description, t("section.description")+':', class: "col-lg-2 control-label"
+      .col-lg-10
+        .col-lg-12= section_form.text_area :description, class: "form-control", rows: 3
+    -#.form-group
+    -#  = section_form.label :controls_count, t("section.controls_number")+':', class: "col-lg-2 control-label"
+    -#  .col-lg-10
+    -#    .col-lg-2= section_form.number_field :controls_count
+    .form-group
+      .pull-right
+        = link_to t("buttons.cancel"), edit_audit_path(id: section_form.object.audit.id), class: "btn btn-danger"
+        = section_form.submit t("section.edit_section_link"), class: "btn btn-success"
