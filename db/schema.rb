@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20131006095009) do
     t.integer  "grade_id"
     t.text     "result",                                 null: false
     t.text     "recommendation"
-    t.integer  "section_id"
+    t.integer  "section_id",                             null: false
     t.integer  "questions_count",            default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20131006095009) do
   add_index "controls", ["section_id"], name: "controls_section_id_fk", using: :btree
 
   create_table "questions", force: true do |t|
-    t.integer  "control_id"
+    t.integer  "control_id",  null: false
     t.string   "name"
     t.string   "description"
     t.integer  "answer_id"

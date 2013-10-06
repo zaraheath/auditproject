@@ -33,6 +33,10 @@ es:
   home_content:
     welcome_message: Bienvenidos a
     welcome_description: Herramienta web para auditores
+    welcome_can: Con esta herramienta podrás
+    welcome_li_1: Crear auditorías y editarlas
+    welcome_li_2: Dividirlas en secciones y crear controles con su madurez
+    welcome_li_3: Guardar preguntas realizadas en cada control
   audits:
     list: Lista de auditorías
     audit: Auditoría

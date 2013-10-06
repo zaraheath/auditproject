@@ -7,7 +7,7 @@ class CreateControls < ActiveRecord::Migration
       t.integer :grade_id
       t.text :result, :null => false
       t.text :recommendation
-      t.references :section
+      t.references :section, :null => false
       t.integer :questions_count, :default => 0, :null => false
       t.timestamps
     end

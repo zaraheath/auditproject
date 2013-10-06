@@ -1,7 +1,7 @@
 class CreateQuestions < ActiveRecord::Migration
   def up
     create_table :questions do |t|
-      t.references :control
+      t.references :control, :null => false
       t.string :name
       t.string :description
       t.integer :answer_id
