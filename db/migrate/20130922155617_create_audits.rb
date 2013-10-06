@@ -11,7 +11,11 @@ class CreateAudits < ActiveRecord::Migration
       t.text :objective
       t.text :global_opinion
       t.text :global_recommendation
+      t.text :confidential
+      t.text :limitations
+      t.text :methodology
       t.string :signature
+      t.integer :sections_count, :default => 0, :null => false
       t.timestamps
     end
 

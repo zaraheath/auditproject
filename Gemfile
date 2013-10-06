@@ -57,4 +57,5 @@ gem 'bootstrap-sass', github: 'thomas-mcdonald/bootstrap-sass'
 
 gem 'foreigner'
 gem 'ancestry'
+gem 'lazy_high_charts'
 

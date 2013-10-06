@@ -1,4 +1,4 @@
-= content_for :jumbotron do
+= content_for :header_info do
   %h2= t("audits.new_audit_link")
 .row
   = render partial: 'form', locals: {url: audits_path}

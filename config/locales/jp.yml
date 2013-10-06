@@ -1,4 +1,9 @@
 jp:
+  date:
+    formats:
+      default: "%Y年%m月%d日"
+      short: "%b %d"
+      long: "%B %d, %Y"
   users:
     sign_in: サインイン
     sign_in_with: "%{provider}でサインイン"

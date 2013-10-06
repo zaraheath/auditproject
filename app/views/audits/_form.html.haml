@@ -1,4 +1,10 @@
 = form_for @audit, url: url, html: {role: "form", class: "form-horizontal"} do |audit_form|
+  - if @audit.errors.any?
+    #error_explanation
+      %h2= pluralize(@audit.errors.count, "error")
+      %ul
+        - @audit.errors.full_messages.each do |msg|
+          %li= msg
   .form-group
     = audit_form.label :name, t("audits.title")+':', class: "col-lg-2 control-label required"
     .col-lg-10
@@ -20,6 +26,10 @@
       = audit_form.label :end_date, t("audits.end_date")+':', class: "col-lg-4 control-label"
       .col-lg-4= audit_form.date_field :end_date, class: "form-control"
   .form-group
+    = audit_form.label :confidential, t("audits.confidential")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_area :confidential, class: "form-control", rows: 3
+  .form-group
     = audit_form.label :objective, t("audits.objective")+':', class: "col-lg-2 control-label"
     .col-lg-10
       .col-lg-12= audit_form.text_area :objective, class: "form-control", rows: 3
@@ -32,9 +42,42 @@
     .col-lg-10
       .col-lg-12= audit_form.text_area :global_recommendation, class: "form-control", rows: 3
   .form-group
+    = audit_form.label :methodology, t("audits.methodology")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_area :methodology, class: "form-control", rows: 3
+  .form-group
+    = audit_form.label :limitations, t("audits.limitations")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= audit_form.text_area :limitations, class: "form-control", rows: 3
+  .form-group
+    = audit_form.label :sections_count, t("audits.sections_number")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-2= audit_form.number_field :sections_count
+  .form-group
     .pull-right
       = link_to t("buttons.cancel"), audits_path, class: "btn btn-danger"
-      - if action_name == "edit"
+      - if !audit_form.object.id.blank?
         = audit_form.submit t("audits.edit_audit_button"), class: "btn btn-success"
       - else
         = audit_form.submit t("audits.new_audit_button"), class: "btn btn-success"
+  .margin50px
+  %h3= t("section.sections")
+  .row
+    %table.table
+      %colgroup
+        %col{:width => "25%"}
+        %col{:width => "65%"}
+        %col{:width => "10%"}
+      %thead
+        %th= t("section.name")
+        %th= t("section.description")
+        %th= t("audits.actions")
+      %tbody
+        - if audit_form.object.sections.any?
+          = audit_form.fields_for :sections do |section_form|
+            %tr
+              %td= section_form.text_field :name, class: "form-control"
+              %td= section_form.text_field :description, class: "form-control"
+              %td
+                = link_to "", edit_section_path(id: section_form.object.id), class: "glyphicon glyphicon-edit text-warning", title: t("buttons.edit")
+                = link_to "", section_path(id: section_form.object.id), method: 'delete', class: "glyphicon glyphicon-remove text-danger", title: t("buttons.remove"), confirm: t("audits.remove_audit_alert")

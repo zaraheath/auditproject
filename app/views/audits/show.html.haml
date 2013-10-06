@@ -1,4 +1,4 @@
-= content_for :jumbotron do
+= content_for :header_info do
   %h2= @audit.name
 .thumbnail
   %table{:width => "100%"}
@@ -17,6 +17,9 @@
         = t("audits.from").capitalize + ' ' + l(@audit.start_date) if !@audit.start_date.blank?
         = t("audits.to") + ' ' + l(@audit.end_date) if !@audit.end_date.blank?
 .margin50px
+%h4= t("audits.confidential")+':'
+= @audit.confidential
+.margin50px
 %h4= t("audits.objective")+':'
 = @audit.objective
 .margin50px
@@ -25,3 +28,9 @@
 .margin50px
 %h4= t("audits.global_recommendation")+':'
 = @audit.global_recommendation
+.margin50px
+%h4= t("audits.methodology")+':'
+= @audit.methodology
+.margin50px
+%h4= t("audits.limitations")+':'
+= @audit.limitations

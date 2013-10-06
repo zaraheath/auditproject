@@ -1,4 +1,11 @@
-= content_for :jumbotron do
-  %h1= t("home_content.welcome_message")
-  %p= t("home_content.welcome_description")
-= "yey"
+= content_for :header_info do
+  .row
+    .col-md-6
+      %h1
+        %table
+          %tr
+            %td.cell_bottom= t("home_content.welcome_message")
+            %td.cell_separate &nbsp;
+            %td= image_tag "logo-x.jpg"
+      %p= t("home_content.welcome_description")
+    .col-md-4= image_tag "logo.jpg"

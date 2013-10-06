@@ -31,7 +31,7 @@ es:
     japanese: Japonés
   home: Inicio
   home_content:
-    welcome_message: Bienvenidos a AudIT
+    welcome_message: Bienvenidos a
     welcome_description: Herramienta web para auditores
   audits:
     list: Lista de auditorías
@@ -49,6 +49,9 @@ es:
     period: Periodo de realización
     from: del
     to: al
+    confidential: Cláusula de confidencialidad
+    methodology: Metodología
+    limitations: Limitaciones
     objective: Objetivo
     conclusion: Conclusión
     global_opinion: Opinión General
@@ -59,9 +62,25 @@ es:
     description: En esta página podrás ver la lista de auditorías realizadas por orden alfabético según el cliente y editarlas, borrarlas o crear nuevas.
     client: Cliente
     remove_audit_alert: "¿Está seguro de querer eliminar esta auditoría? Se perderán todos los datos."
+    sections_number: Número de secciones
+  section:
+    section: Sección
+    sections: Secciones
+    new_section_link: Nueva sección
+    edit_section_link: Editar sección
+    controls_number: Número de controles
+    name: Nombre
+    description: Descripción
   controls:
     control: Control
     high_level_control: Objetivo de control
     detailed_control: Práctica de control
-    grades: Madurez
+    grade_measure: Madurez
+    grades:
+      non_existent: No existente
+      initial: Inicial
+      repeatable: Repetible pero intuitivo
+      defined: Definido
+      managed: Administrado y medible
+      optimized: Optimizado
 
