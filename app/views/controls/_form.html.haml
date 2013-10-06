@@ -1,0 +1,38 @@
+= form_for @control, url: url, html: {role: "form", class: "form-horizontal"} do |control_form|
+  - if @control.errors.any?
+    #error_explanation
+      %h2= pluralize(@control.errors.count, "error")
+      %ul
+        - @control.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = control_form.label :code, t("controls.code")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-5
+        = control_form.text_field :code, class: "form-control"
+        = control_form.hidden_field :section_id
+      = control_form.label :grade_id, t("controls.grade_measure")+':', class: "col-lg-3 control-label"
+      .col-lg-4= control_form.select :grade_id, options_for_select(grades_options, control_form.object.grade_id), {}, class: "form-control"
+  .form-group
+    = control_form.label :name, t("controls.name")+':', class: "col-lg-2 control-label required"
+    .col-lg-10
+      .col-lg-12= control_form.text_field :name, class: "form-control", required: true
+  .form-group
+    = control_form.label :description, t("controls.description")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= control_form.text_area :description, class: "form-control", rows: 3
+  .form-group
+    = control_form.label :result, t("controls.result")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= control_form.text_area :result, class: "form-control", rows: 3
+  .form-group
+    = control_form.label :recommendation, t("controls.recommendation")+':', class: "col-lg-2 control-label"
+    .col-lg-10
+      .col-lg-12= control_form.text_area :recommendation, class: "form-control", rows: 3
+  .form-group
+    .pull-right
+      = link_to t("buttons.cancel"), edit_section_path(id: control_form.object.section.id), class: "btn btn-danger"
+      - if control_form.object.id.blank?
+        = control_form.submit t("controls.new_hl_control"), class: "btn btn-success"
+      - else
+        = control_form.submit t("controls.edit_hl_control"), class: "btn btn-success"

@@ -17,6 +17,7 @@ Auditproject::Application.routes.draw do
     resources :users
     resources :audits
     resources :sections
+    resources :controls
 
     # Example resource route with options:
     #   resources :products do

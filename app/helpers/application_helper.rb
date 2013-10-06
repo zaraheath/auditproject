@@ -13,4 +13,8 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
+  def grades_options
+    Control::GRADES_KEYS.invert.map{|k, a| [t("controls.grades.#{k}"), a]}
+  end
+
 end

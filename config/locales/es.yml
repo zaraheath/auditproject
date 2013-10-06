@@ -67,15 +67,29 @@ es:
     section: Sección
     sections: Secciones
     new_section_link: Nueva sección
-    edit_section_link: Editar sección
+    edit_section_link: "Editar sección: %{title}"
+    edit_section_button: Editar sección
     controls_number: Número de controles
+    empty_results: No se encontraron secciones
     name: Nombre
     description: Descripción
   controls:
     control: Control
+    controls: Controles
     high_level_control: Objetivo de control
     detailed_control: Práctica de control
+    new_hl_control: Nuevo objetivo de control
+    edit_hl_control: Editar objetivo de control
+    new_dt_control: Nueva práctica de control
+    edit_dt_control: Editar práctica de control
     grade_measure: Madurez
+    code: Código
+    name: Nombre
+    description: Descripción
+    result: Resultado
+    recommendation: Recomendación
+    questions_number: Numero de preguntas
+    empty_results: No se encontraron controles
     grades:
       non_existent: No existente
       initial: Inicial
@@ -83,4 +97,8 @@ es:
       defined: Definido
       managed: Administrado y medible
       optimized: Optimizado
+  questions:
+    question: Pregunta
+    questions: Preguntas
+
 

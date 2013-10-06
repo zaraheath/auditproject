@@ -1,0 +1,4 @@
+= content_for :header_info do
+  %h2= @control.section.name + ': ' + t("controls.new_hl_control")
+.row
+  = render partial: 'form', locals: {url: controls_path}

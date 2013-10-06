@@ -23,4 +23,36 @@
     .form-group
       .pull-right
         = link_to t("buttons.cancel"), edit_audit_path(id: section_form.object.audit.id), class: "btn btn-danger"
-        = section_form.submit t("section.edit_section_link"), class: "btn btn-success"
+        = section_form.submit t("section.edit_section_button"), class: "btn btn-success"
+    .margin50px
+    .row
+      .content
+        %h3= t("controls.controls")
+        .pull-right
+          = link_to t("controls.new_hl_control"), new_control_path(section: @section.id), class: "btn btn-success"
+      .margin50px
+      %table.table
+        %colgroup
+          %col{:width => "25%"}
+          %col{:width => "50%"}
+          %col{:width => "15%"}
+          %col{:width => "10%"}
+        %thead
+          %th= t("controls.name")
+          %th= t("controls.description")
+          %th= t("controls.grade_measure")
+          %th= t("audits.actions")
+        %tbody
+          - if @section.controls.blank?
+            %tr
+              %td{:colspan => 6}
+                = t("controls.empty_results")
+          - else
+            - @section.controls.each do |control|
+              %tr
+                %td= control.name
+                %td= control.description
+                %td= t("#{control.grade}")
+                %td
+                  = link_to "", edit_control_path(id: control.id), class: "glyphicon glyphicon-edit text-warning", title: t("buttons.edit")
+                  = link_to "", control_path(id: control.id), method: 'delete', class: "glyphicon glyphicon-remove text-danger", title: t("buttons.remove"), confirm: t("audits.remove_audit_alert")
